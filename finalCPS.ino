@@ -61,19 +61,19 @@ void loop() {
   lcd.print("Safe to go in");
   
   temp_obj = mlx.readObjectTempC();
-  if (temp_obj > 25) {
-    digitalWrite(Ledgreen, LOW);
-    Serial.print("Warning...HIGH TEMP...");
-    lcd.clear();
-    lcd.setCursor(0, 0);
+  if (temp_obj > 37.5) {              //set the temperature to 37.5C
+    digitalWrite(Ledgreen, LOW);      // if the temperature is more than 37.5C set green LED to low
+    Serial.print("Warning...HIGH TEMP...");       // high temperature on serial montior of ardunio
+    lcd.clear();                                   // clear LCD
+    lcd.setCursor(0, 0);                              // display temperture and Message on lCD screen
     lcd.print("Temp.   :");
     lcd.print(mlx.readObjectTempC());
     lcd.println("*C");
     lcd.setCursor(0, 1);
     lcd.print("STOP");
-    digitalWrite(buzzer, HIGH);
-    digitalWrite(Ledred, HIGH);
-    delay(500);
+    digitalWrite(buzzer, HIGH);         // buzzer on
+    digitalWrite(Ledred, HIGH);         // red led on
+    delay(500);                         // .5 s delay loop
     digitalWrite(buzzer, LOW);
     digitalWrite(Ledred, LOW);
     digitalWrite(Ledgreen, HIGH);
