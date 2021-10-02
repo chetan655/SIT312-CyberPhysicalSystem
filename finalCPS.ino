@@ -6,14 +6,14 @@
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 LiquidCrystal_I2C lcd(0x27,16,2);
 
-int buzzer = 5;               //buzzer to pin 5
-int Ledred = 12;              // led red to pin12
-int Ledgreen = 13;            // led green to pin13
+int buzzer = 5;               //buzzer to pin 5.
+int Ledred = 12;              // led red to pin12.
+int Ledgreen = 13;            // led green to pin13.
 double temp_obj;
 
 void setup() {
-  lcd.init();                      // initialize the lcd 
-  lcd.backlight();                  // initialize lcd backlight
+  lcd.init();                      // initialize the lcd. 
+  lcd.backlight();                  // initialize lcd backlight.
   Serial.begin(9600);
   pinMode(buzzer, OUTPUT);
   pinMode(Ledred, OUTPUT);
