@@ -53,7 +53,7 @@ void loop() {
  
   Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempC());
   Serial.print("*C\tObject = "); Serial.print(mlx.readObjectTempC()); Serial.println("*C");
-  lcd.setCursor(0, 0);
+  lcd.setCursor(0, 0);          //to display the temperature on the screen upper part.
   lcd.print("Temp.   :");
   lcd.print(mlx.readObjectTempC());
   lcd.println("*C");
